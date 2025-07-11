@@ -1,0 +1,27 @@
+# config/webpacker.yml
+default: &default
+  source_path: app/javascript
+  source_entry_path: packs
+  public_root_path: public
+  public_output_path: packs
+  cache_path: tmp/cache/webpacker
+  webpack_compile_output: true
+  extensions:
+    - .js
+    - .jsx
+    - .css
+    - .scss
+    - .sass
+  entry:
+    application: ./app/javascript/packs/application.js
+
+development:
+  <<: *default
+  compile: true
+  dev_server:
+    host: localhost
+    port: 3035
+
+production:
+  <<: *default
+  compile: false
